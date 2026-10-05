@@ -1,0 +1,82 @@
+[
+  {
+    "id": "q01",
+    "turns": ["How much did I spend on dining in July 2026?"],
+    "numbers": [675.80]
+  },
+  {
+    "id": "q02",
+    "turns": ["How much did I spend on food last month?"],
+    "numbers": [1750.61]
+  },
+  {
+    "id": "q03",
+    "turns": ["What was my total income in June 2026?"],
+    "numbers": [4900.00]
+  },
+  {
+    "id": "q04",
+    "turns": ["How much did I save in August 2026, meaning income minus spending?"],
+    "numbers": [353.37]
+  },
+  {
+    "id": "q05",
+    "turns": ["Which merchant did I spend the most money at between April and September 2026, and how much?"],
+    "numbers": [9900.00],
+    "keywords": [["Oakview"]]
+  },
+  {
+    "id": "q06",
+    "turns": ["Not counting rent, which category did I spend the most on in May 2026?"],
+    "numbers": [776.64],
+    "keywords": [["Groceries"]]
+  },
+  {
+    "id": "q07",
+    "turns": ["How much have I paid StreamFlix in total?"],
+    "numbers": [92.94]
+  },
+  {
+    "id": "q08",
+    "turns": ["How many times did I eat at Taco Town in August 2026?"],
+    "numbers": [5],
+    "tolerance": 0
+  },
+  {
+    "id": "q09",
+    "turns": ["Did my total spending go up or down from July 2026 to August 2026, and by how much?"],
+    "numbers": [2226.83],
+    "keywords": [["down", "decrease", "less", "lower", "dropped", "fell"]]
+  },
+  {
+    "id": "q10",
+    "turns": ["Flag anything unusual in my transactions."],
+    "numbers": [2399.99, 450.00, 89.50]
+  },
+  {
+    "id": "q11",
+    "turns": ["Was I double charged anywhere?"],
+    "numbers": [89.50],
+    "keywords": [["Urban Threads"]]
+  },
+  {
+    "id": "q12",
+    "turns": ["How much did I spend on dining in July 2026?", "What about the month before?"],
+    "numbers": [535.40]
+  },
+  {
+    "id": "q13",
+    "turns": ["How much did I spend on dining in January 2026?"],
+    "decline": true
+  },
+  {
+    "id": "q14",
+    "turns": ["What is my credit score?"],
+    "decline": true
+  },
+  {
+    "id": "q15",
+    "turns": ["Exactly how much will I spend on groceries next month?"],
+    "decline": true
+  }
+]
