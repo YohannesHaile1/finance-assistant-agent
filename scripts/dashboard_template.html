@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spending Overview</title>
+<style>
+  :root {
+    color-scheme: light;
+    --page: #f9f9f7;
+    --surface: #fcfcfb;
+    --text-primary: #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted: #898781;
+    --hairline: #e1e0d9;
+    --border: rgba(11, 11, 11, 0.10);
+    --hover-wash: rgba(11, 11, 11, 0.04);
+    --credit: #006300;
+    --series-1: #2a78d6;
+    --series-2: #eb6834;
+    --series-3: #1baf7a;
+    --series-4: #eda100;
+    --series-5: #e87ba4;
+    --series-6: #008300;
+    --series-7: #4a3aa7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --page: #0d0d0d;
+      --surface: #1a1a19;
+      --text-primary: #ffffff;
+      --text-secondary: #c3c2b7;
+      --text-muted: #898781;
+      --hairline: #2c2c2a;
+      --border: rgba(255, 255, 255, 0.10);
+      --hover-wash: rgba(255, 255, 255, 0.05);
+      --credit: #0ca30c;
+      --series-1: #3987e5;
+      --series-2: #d95926;
+      --series-3: #199e70;
+      --series-4: #c98500;
+      --series-5: #d55181;
+      --series-6: #008300;
+      --series-7: #9085e9;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--text-primary);
+    font: 14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  .page { max-width: 980px; margin: 0 auto; padding: 32px 16px 48px; }
+
+  header h1 { font-size: 22px; margin: 0; font-weight: 650; }
+  header p { margin: 4px 0 0; color: var(--text-secondary); }
+
+  /* Month filter: one row above everything it scopes. */
+  .filters { display: flex; flex-wrap: wrap; gap: 6px; margin: 20px 0; }
+  .filters button {
+    font: inherit; color: var(--text-secondary); background: transparent;
+    border: 1px solid var(--border); border-radius: 999px; padding: 5px 14px; cursor: pointer;
+  }
+  .filters button:hover { background: var(--hover-wash); }
+  .filters button[aria-pressed="true"] {
+    color: var(--surface); background: var(--text-primary); border-color: var(--text-primary); font-weight: 600;
+  }
+
+  .card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    padding: 20px; margin-bottom: 16px;
+  }
+  .card h2 { font-size: 15px; font-weight: 600; margin: 0 0 16px; }
+
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 16px; }
+  .stats .card { margin: 0; }
+  .stat-label { color: var(--text-secondary); font-size: 13px; }
+  .stat-value { font-size: 26px; font-weight: 650; margin-top: 4px; }
+
+  /* Donut + category breakdown */
+  .breakdown-layout { display: flex; flex-wrap: wrap; gap: 28px; align-items: center; }
+  .donut-wrap { position: relative; width: 240px; height: 240px; flex: none; margin: 0 auto; }
+  .donut-wrap svg { width: 100%; height: 100%; display: block; }
+  .donut-wrap circle { cursor: pointer; transition: opacity 120ms; }
+  .donut-wrap circle:focus { outline: none; }
+  .donut-wrap circle.dim { opacity: 0.25; }
+  .donut-center {
+    position: absolute; inset: 0; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; pointer-events: none; text-align: center;
+  }
+  .donut-center .label { color: var(--text-secondary); font-size: 13px; }
+  .donut-center .value { font-size: 24px; font-weight: 650; }
+
+  .category-list { list-style: none; margin: 0; padding: 0; flex: 1 1 300px; min-width: 0; }
+  .category-list button {
+    width: 100%; display: grid; grid-template-columns: 12px 1fr auto auto; gap: 10px; align-items: center;
+    font: inherit; color: inherit; text-align: left; background: transparent; border: 0;
+    border-radius: 8px; padding: 8px 10px; cursor: pointer;
+  }
+  .category-list button:hover, .category-list button.hover { background: var(--hover-wash); }
+  .category-list button[aria-pressed="true"] { background: var(--hover-wash); font-weight: 600; }
+  .swatch { width: 12px; height: 12px; border-radius: 3px; }
+  .pct { color: var(--text-muted); font-variant-numeric: tabular-nums; }
+  .amount { font-variant-numeric: tabular-nums; text-align: right; min-width: 92px; }
+  .hint { color: var(--text-muted); font-size: 12px; margin: 12px 0 0; }
+
+  /* Tooltip */
+  .tooltip {
+    position: fixed; pointer-events: none; z-index: 10;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12); padding: 8px 12px; min-width: 140px;
+  }
+  .tooltip .tip-value { font-weight: 650; font-size: 15px; }
+  .tooltip .tip-label { display: flex; align-items: center; gap: 6px; color: var(--text-secondary); font-size: 12px; }
+  .tooltip .tip-key { width: 12px; height: 2px; border-radius: 1px; }
+
+  /* Transactions table */
+  .table-toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 12px; }
+  .table-toolbar input {
+    font: inherit; color: inherit; background: var(--page); border: 1px solid var(--border);
+    border-radius: 8px; padding: 7px 12px; flex: 1 1 220px; min-width: 0;
+  }
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--border);
+    border-radius: 999px; padding: 4px 6px 4px 12px; font-size: 13px;
+  }
+  .chip button {
+    font: inherit; border: 0; background: transparent; color: var(--text-secondary);
+    cursor: pointer; border-radius: 999px; padding: 0 6px;
+  }
+  .result-count { color: var(--text-muted); font-size: 13px; margin-left: auto; }
+
+  .table-scroll { max-height: 440px; overflow: auto; border-top: 1px solid var(--hairline); }
+  table { width: 100%; border-collapse: collapse; }
+  th {
+    position: sticky; top: 0; background: var(--surface); text-align: left;
+    font-weight: 600; font-size: 12px; color: var(--text-secondary);
+    border-bottom: 1px solid var(--hairline); padding: 0;
+  }
+  th button {
+    font: inherit; color: inherit; background: transparent; border: 0; cursor: pointer;
+    width: 100%; text-align: inherit; padding: 10px 12px; white-space: nowrap;
+  }
+  th button:hover { color: var(--text-primary); }
+  th.num, td.num { text-align: right; }
+  td { padding: 10px 12px; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+  tbody tr:hover { background: var(--hover-wash); }
+  .date-cell { white-space: nowrap; color: var(--text-secondary); font-variant-numeric: tabular-nums; }
+  .merchant-name { font-weight: 550; }
+  .merchant-desc { color: var(--text-muted); font-size: 12px; }
+  .category-cell { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+  td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  td.credit { color: var(--credit); font-weight: 600; }
+  .empty { text-align: center; color: var(--text-muted); padding: 32px 12px; }
+
+  footer { color: var(--text-muted); font-size: 12px; margin-top: 8px; }
+
+  @media (max-width: 560px) {
+    /* On phones, keep Amount visible: drop the description and the Category column
+       (the category list above still filters by category). */
+    .merchant-desc { display: none; }
+    th:nth-child(3), td:nth-child(3) { display: none; }
+    td, th button { padding-left: 6px; padding-right: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <h1>Spending overview</h1>
+    <p>Fake sample data for the finance assistant agent project.</p>
+  </header>
+
+  <nav class="filters" id="month-filters" aria-label="Filter by month"></nav>
+
+  <section class="stats" aria-label="Totals for the selected period">
+    <div class="card"><div class="stat-label">Money in</div><div class="stat-value" id="stat-income"></div></div>
+    <div class="card"><div class="stat-label">Money out</div><div class="stat-value" id="stat-spent"></div></div>
+    <div class="card"><div class="stat-label">Net</div><div class="stat-value" id="stat-net"></div></div>
+  </section>
+
+  <section class="card" aria-labelledby="categories-title">
+    <h2 id="categories-title">Spending by category</h2>
+    <div class="breakdown-layout">
+      <div class="donut-wrap">
+        <svg id="donut" viewBox="0 0 240 240" role="img" aria-label="Donut chart of spending by category"></svg>
+        <div class="donut-center">
+          <span class="label">Spent</span>
+          <span class="value" id="donut-total"></span>
+        </div>
+      </div>
+      <ul class="category-list" id="category-list"></ul>
+    </div>
+    <p class="hint">Click a category to filter the transactions below.</p>
+  </section>
+
+  <section class="card" aria-labelledby="transactions-title">
+    <h2 id="transactions-title">Transactions</h2>
+    <div class="table-toolbar">
+      <input id="search" type="search" placeholder="Search merchant or description" aria-label="Search transactions">
+      <span id="category-chip"></span>
+      <span class="result-count" id="result-count"></span>
+    </div>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th data-sort="date"><button type="button">Date</button></th>
+            <th data-sort="merchant"><button type="button">Merchant</button></th>
+            <th data-sort="category"><button type="button">Category</button></th>
+            <th data-sort="amount" class="num"><button type="button">Amount</button></th>
+          </tr>
+        </thead>
+        <tbody id="transaction-rows"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>Generated from data/sample_transactions.csv. All transactions are fake.</footer>
+</div>
+
+<div class="tooltip" id="tooltip" hidden></div>
+
+<script>
+const TRANSACTIONS = __TRANSACTIONS_JSON__;
+
+// Each category keeps the same color in every view (color follows the category, not its rank).
+const CATEGORY_ORDER = ["Rent", "Shopping", "Groceries", "Dining", "Transport", "Utilities", "Entertainment"];
+
+const state = { month: "all", category: null, search: "", sortKey: "date", sortDir: "desc" };
+
+const money = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" });
+const SVG_NS = "http://www.w3.org/2000/svg";
+
+// ---------- helpers ----------
+
+// Builds a DOM element. Text always goes in via textContent, never innerHTML.
+function el(tag, props = {}, ...children) {
+  const node = document.createElement(tag);
+  for (const [key, value] of Object.entries(props)) {
+    if (key === "style") Object.assign(node.style, value);
+    else if (key === "text") node.textContent = value;
+    else if (key in node) node[key] = value;
+    else node.setAttribute(key, value);
+  }
+  node.append(...children);
+  return node;
+}
+
+function colorFor(category) {
+  const index = CATEGORY_ORDER.indexOf(category);
+  return index >= 0 ? `var(--series-${index + 1})` : "var(--text-muted)";
+}
+
+function formatMonth(month) {
+  const [year, monthNumber] = month.split("-").map(Number);
+  return new Date(year, monthNumber - 1, 1).toLocaleString("en-US", { month: "short", year: "numeric" });
+}
+
+function formatDate(isoDate) {
+  const [year, month, day] = isoDate.split("-").map(Number);
+  return new Date(year, month - 1, day).toLocaleString("en-US", { month: "short", day: "numeric", year: "numeric" });
+}
+
+function rowsInSelectedMonth() {
+  return TRANSACTIONS.filter(t => state.month === "all" || t.date.startsWith(state.month));
+}
+
+function spendingByCategory(rows) {
+  const totals = new Map();
+  for (const t of rows) {
+    if (t.type !== "debit") continue;
+    totals.set(t.category, (totals.get(t.category) || 0) + t.amount);
+  }
+  const known = CATEGORY_ORDER.filter(c => totals.has(c));
+  const unknown = [...totals.keys()].filter(c => !CATEGORY_ORDER.includes(c));
+  return [...known, ...unknown].map(category => ({ category, total: totals.get(category) }));
+}
+
+function toggleCategory(category) {
+  state.category = state.category === category ? null : category;
+  render();
+}
+
+// ---------- tooltip & linked hover ----------
+
+const tooltip = document.getElementById("tooltip");
+
+function showTooltip(category, total, share, x, y) {
+  tooltip.replaceChildren(
+    el("div", { className: "tip-value", text: money.format(total) }),
+    el("div", { className: "tip-label" },
+      el("span", { className: "tip-key", style: { background: colorFor(category) } }),
+      el("span", { text: `${category} · ${(share * 100).toFixed(1)}%` }))
+  );
+  tooltip.hidden = false;
+  const margin = 14;
+  const left = Math.min(x + margin, window.innerWidth - tooltip.offsetWidth - 8);
+  const top = Math.min(y + margin, window.innerHeight - tooltip.offsetHeight - 8);
+  tooltip.style.left = `${left}px`;
+  tooltip.style.top = `${top}px`;
+}
+
+function hideTooltip() { tooltip.hidden = true; }
+
+function setHoveredCategory(category) {
+  for (const button of document.querySelectorAll("#category-list button")) {
+    button.classList.toggle("hover", button.dataset.category === category);
+  }
+}
+
+// ---------- rendering ----------
+
+function renderMonthFilters() {
+  const months = [...new Set(TRANSACTIONS.map(t => t.date.slice(0, 7)))].sort();
+  const options = [["all", "All months"], ...months.map(m => [m, formatMonth(m)])];
+  const container = document.getElementById("month-filters");
+  container.replaceChildren(...options.map(([value, label]) => {
+    const button = el("button", { type: "button", text: label });
+    button.setAttribute("aria-pressed", String(state.month === value));
+    button.addEventListener("click", () => { state.month = value; render(); });
+    return button;
+  }));
+}
+
+function renderStats(rows) {
+  const income = rows.filter(t => t.type === "credit").reduce((sum, t) => sum + t.amount, 0);
+  const spent = rows.filter(t => t.type === "debit").reduce((sum, t) => sum + t.amount, 0);
+  const net = income - spent;
+  document.getElementById("stat-income").textContent = money.format(income);
+  document.getElementById("stat-spent").textContent = money.format(spent);
+  document.getElementById("stat-net").textContent = (net >= 0 ? "+" : "−") + money.format(Math.abs(net));
+}
+
+function renderDonut(categoryTotals) {
+  const svg = document.getElementById("donut");
+  svg.replaceChildren();
+  const totalSpent = categoryTotals.reduce((sum, c) => sum + c.total, 0);
+  document.getElementById("donut-total").textContent = money.format(totalSpent);
+  if (totalSpent === 0) return;
+
+  // Each segment is a stroked circle; stroke-dasharray paints only its slice of the ring.
+  const radius = 92;
+  const thickness = 30;
+  const circumference = 2 * Math.PI * radius;
+  const gap = categoryTotals.length > 1 ? 2 : 0;  // 2px surface gap between slices
+  let offset = 0;
+
+  for (const { category, total } of categoryTotals) {
+    const share = total / totalSpent;
+    const length = share * circumference;
+    const segment = document.createElementNS(SVG_NS, "circle");
+    segment.setAttribute("cx", 120);
+    segment.setAttribute("cy", 120);
+    segment.setAttribute("r", radius);
+    segment.setAttribute("fill", "none");
+    segment.setAttribute("stroke", colorFor(category));
+    segment.setAttribute("stroke-width", thickness);
+    segment.setAttribute("stroke-dasharray", `${Math.max(length - gap, 0)} ${circumference - length + gap}`);
+    segment.setAttribute("stroke-dashoffset", -offset);
+    segment.setAttribute("transform", "rotate(-90 120 120)");  // start at 12 o'clock
+    segment.dataset.category = category;
+    segment.setAttribute("tabindex", "0");
+    segment.setAttribute("role", "button");
+    segment.setAttribute("aria-label", `${category}: ${money.format(total)}, ${(share * 100).toFixed(1)}%`);
+    if (state.category && state.category !== category) segment.classList.add("dim");
+
+    segment.addEventListener("pointermove", e => { showTooltip(category, total, share, e.clientX, e.clientY); setHoveredCategory(category); });
+    segment.addEventListener("pointerleave", () => { hideTooltip(); setHoveredCategory(null); });
+    segment.addEventListener("focus", () => {
+      const box = segment.getBoundingClientRect();
+      showTooltip(category, total, share, box.left + box.width / 2, box.top + box.height / 2);
+      setHoveredCategory(category);
+    });
+    segment.addEventListener("blur", () => { hideTooltip(); setHoveredCategory(null); });
+    segment.addEventListener("click", () => toggleCategory(category));
+    segment.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleCategory(category); } });
+
+    svg.append(segment);
+    offset += length;
+  }
+}
+
+function renderCategoryList(categoryTotals) {
+  const totalSpent = categoryTotals.reduce((sum, c) => sum + c.total, 0);
+  const largestFirst = [...categoryTotals].sort((a, b) => b.total - a.total);
+  const list = document.getElementById("category-list");
+  list.replaceChildren(...largestFirst.map(({ category, total }) => {
+    const button = el("button", { type: "button" },
+      el("span", { className: "swatch", style: { background: colorFor(category) } }),
+      el("span", { text: category }),
+      el("span", { className: "pct", text: `${((total / totalSpent) * 100).toFixed(1)}%` }),
+      el("span", { className: "amount", text: money.format(total) }));
+    button.dataset.category = category;
+    button.setAttribute("aria-pressed", String(state.category === category));
+    button.addEventListener("click", () => toggleCategory(category));
+    button.addEventListener("pointerenter", () => highlightSegment(category));
+    button.addEventListener("pointerleave", () => highlightSegment(null));
+    return el("li", {}, button);
+  }));
+}
+
+// Hovering a list row fades the other donut slices so the matching slice stands out.
+function highlightSegment(category) {
+  const focus = category || state.category;
+  for (const segment of document.querySelectorAll("#donut circle")) {
+    segment.classList.toggle("dim", Boolean(focus) && segment.dataset.category !== focus);
+  }
+}
+
+function renderCategoryChip() {
+  const chip = document.getElementById("category-chip");
+  if (!state.category) { chip.replaceChildren(); return; }
+  const clear = el("button", { type: "button", text: "✕", "aria-label": "Clear category filter" });
+  clear.addEventListener("click", () => toggleCategory(state.category));
+  chip.replaceChildren(el("span", { className: "chip" },
+    el("span", { className: "dot", style: { background: colorFor(state.category) } }),
+    el("span", { text: state.category }),
+    clear));
+}
+
+function compareRows(a, b) {
+  const key = state.sortKey;
+  let result;
+  if (key === "amount") {
+    result = a.amount - b.amount;
+  } else {
+    result = String(a[key]).localeCompare(String(b[key]));
+  }
+  // Ties fall back to newest date first, so the order is always predictable.
+  if (result === 0 && key !== "date") result = b.date.localeCompare(a.date);
+  return state.sortDir === "asc" ? result : -result;
+}
+
+function renderTable(rows) {
+  const query = state.search.trim().toLowerCase();
+  const visible = rows
+    .filter(t => !state.category || t.category === state.category)
+    .filter(t => !query || `${t.merchant} ${t.description} ${t.category}`.toLowerCase().includes(query))
+    .sort(compareRows);
+
+  const tbody = document.getElementById("transaction-rows");
+  if (visible.length === 0) {
+    tbody.replaceChildren(el("tr", {}, el("td", { className: "empty", colSpan: 4, text: "No transactions match these filters." })));
+  } else {
+    tbody.replaceChildren(...visible.map(t => {
+      const isCredit = t.type === "credit";
+      return el("tr", {},
+        el("td", { className: "date-cell", text: formatDate(t.date) }),
+        el("td", {},
+          el("div", { className: "merchant-name", text: t.merchant }),
+          el("div", { className: "merchant-desc", text: t.description })),
+        el("td", {},
+          el("span", { className: "category-cell" },
+            el("span", { className: "dot", style: { background: colorFor(t.category) } }),
+            el("span", { text: t.category }))),
+        el("td", { className: isCredit ? "num credit" : "num", text: (isCredit ? "+" : "−") + money.format(t.amount) }));
+    }));
+  }
+  document.getElementById("result-count").textContent = `${visible.length} transaction${visible.length === 1 ? "" : "s"}`;
+
+  for (const th of document.querySelectorAll("th[data-sort]")) {
+    const active = th.dataset.sort === state.sortKey;
+    th.setAttribute("aria-sort", active ? (state.sortDir === "asc" ? "ascending" : "descending") : "none");
+    const button = th.querySelector("button");
+    button.textContent = button.textContent.replace(/ [▲▼]$/, "") + (active ? (state.sortDir === "asc" ? " ▲" : " ▼") : "");
+  }
+}
+
+function render() {
+  hideTooltip();
+  const rows = rowsInSelectedMonth();
+  const categoryTotals = spendingByCategory(rows);
+  renderMonthFilters();
+  renderStats(rows);
+  renderDonut(categoryTotals);
+  renderCategoryList(categoryTotals);
+  renderCategoryChip();
+  renderTable(rows);
+}
+
+// ---------- events that live outside render() ----------
+
+document.getElementById("search").addEventListener("input", e => { state.search = e.target.value; renderTable(rowsInSelectedMonth()); });
+
+for (const th of document.querySelectorAll("th[data-sort]")) {
+  th.querySelector("button").addEventListener("click", () => {
+    const key = th.dataset.sort;
+    if (state.sortKey === key) {
+      state.sortDir = state.sortDir === "asc" ? "desc" : "asc";
+    } else {
+      state.sortKey = key;
+      state.sortDir = key === "date" || key === "amount" ? "desc" : "asc";  // newest / largest first
+    }
+    renderTable(rowsInSelectedMonth());
+  });
+}
+
+render();
+</script>
+</body>
+</html>

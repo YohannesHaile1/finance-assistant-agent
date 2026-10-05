@@ -218,3 +218,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Generated dashboard (rebuild with: python scripts/build_dashboard.py)
+reports/

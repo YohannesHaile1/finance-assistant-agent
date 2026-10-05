@@ -1,0 +1,342 @@
+date,description,merchant,category,amount,type
+2026-04-01,OAKVIEW APARTMENTS RENT,Oakview Apartments,Rent,1650.0,debit
+2026-04-01,ACME CORP PAYROLL DIRECT DEP,Acme Corp,Income,2450.0,credit
+2026-04-01,FRESHMART #0231,FreshMart,Groceries,41.05,debit
+2026-04-01,BURGER BARN #3,Burger Barn,Dining,12.52,debit
+2026-04-01,QUICKRIDE TRIP,QuickRide,Transport,12.87,debit
+2026-04-03,FRESHMART #0231,FreshMart,Groceries,112.26,debit
+2026-04-03,NOODLE HOUSE,Noodle House,Dining,25.69,debit
+2026-04-03,FUELUP GAS #887,FuelUp Gas,Transport,13.31,debit
+2026-04-04,LUIGIS PIZZERIA,Luigi's Pizzeria,Dining,45.95,debit
+2026-04-05,CITY POWER & LIGHT AUTOPAY,City Power & Light,Utilities,107.6,debit
+2026-04-06,FRESHMART #0231,FreshMart,Groceries,113.9,debit
+2026-04-07,FUELUP GAS #887,FuelUp Gas,Transport,18.89,debit
+2026-04-08,STREAMFLIX SUBSCRIPTION,StreamFlix,Entertainment,15.49,debit
+2026-04-08,SUNRISE CAFE,Sunrise Cafe,Dining,16.5,debit
+2026-04-08,CITYPARK PARKING GARAGE,CityPark Parking,Transport,43.78,debit
+2026-04-09,LUIGIS PIZZERIA,Luigi's Pizzeria,Dining,49.86,debit
+2026-04-09,QUICKRIDE TRIP,QuickRide,Transport,18.97,debit
+2026-04-10,AQUAWORKS WATER UTILITY,AquaWorks Water,Utilities,41.29,debit
+2026-04-10,NOODLE HOUSE,Noodle House,Dining,15.43,debit
+2026-04-10,CITYPARK PARKING GARAGE,CityPark Parking,Transport,37.19,debit
+2026-04-11,SUNRISE CAFE,Sunrise Cafe,Dining,59.86,debit
+2026-04-11,FUELUP GAS #887,FuelUp Gas,Transport,12.73,debit
+2026-04-11,MEGAMART ONLINE ORDER,MegaMart Online,Shopping,39.87,debit
+2026-04-12,CITYPARK PARKING GARAGE,CityPark Parking,Transport,59.8,debit
+2026-04-13,LUIGIS PIZZERIA,Luigi's Pizzeria,Dining,43.45,debit
+2026-04-14,GREEN BASKET GROCERY,Green Basket Grocery,Groceries,43.19,debit
+2026-04-14,TACO TOWN #12,Taco Town,Dining,58.54,debit
+2026-04-15,ACME CORP PAYROLL DIRECT DEP,Acme Corp,Income,2450.0,credit
+2026-04-15,STREAMNET INTERNET SVC,StreamNet Internet,Utilities,65.0,debit
+2026-04-15,TACO TOWN #12,Taco Town,Dining,47.65,debit
+2026-04-16,GREEN BASKET GROCERY,Green Basket Grocery,Groceries,81.19,debit
+2026-04-16,TACO TOWN #12,Taco Town,Dining,53.69,debit
+2026-04-16,CINEMAX THEATERS,CineMax Theaters,Entertainment,16.66,debit
+2026-04-17,BURGER BARN #3,Burger Barn,Dining,47.82,debit
+2026-04-17,FUELUP GAS #887,FuelUp Gas,Transport,57.24,debit
+2026-04-19,TACO TOWN #12,Taco Town,Dining,30.78,debit
+2026-04-19,MEGAMART ONLINE ORDER,MegaMart Online,Shopping,28.32,debit
+2026-04-19,CINEMAX THEATERS,CineMax Theaters,Entertainment,32.24,debit
+2026-04-20,CELLONE MOBILE BILL,CellOne Mobile,Utilities,45.0,debit
+2026-04-20,LUIGIS PIZZERIA,Luigi's Pizzeria,Dining,55.08,debit
+2026-04-20,MEGAMART ONLINE ORDER,MegaMart Online,Shopping,56.2,debit
+2026-04-22,TUNELY MUSIC PREMIUM,Tunely Music,Entertainment,10.99,debit
+2026-04-22,NOODLE HOUSE,Noodle House,Dining,26.42,debit
+2026-04-22,CITYPARK PARKING GARAGE,CityPark Parking,Transport,10.82,debit
+2026-04-23,CORNER MARKET 14TH ST,Corner Market,Groceries,64.02,debit
+2026-04-23,QUICKRIDE TRIP,QuickRide,Transport,35.89,debit
+2026-04-23,MEGAMART ONLINE ORDER,MegaMart Online,Shopping,56.21,debit
+2026-04-24,BURGER BARN #3,Burger Barn,Dining,13.09,debit
+2026-04-24,CINEMAX THEATERS,CineMax Theaters,Entertainment,42.72,debit
+2026-04-25,NOODLE HOUSE,Noodle House,Dining,33.03,debit
+2026-04-26,GREEN BASKET GROCERY,Green Basket Grocery,Groceries,55.5,debit
+2026-04-28,BOWL-O-RAMA LANES,Bowl-O-Rama,Entertainment,29.59,debit
+2026-04-29,BURGER BARN #3,Burger Barn,Dining,12.17,debit
+2026-04-29,CITYPARK PARKING GARAGE,CityPark Parking,Transport,11.53,debit
+2026-04-30,MEGAMART ONLINE ORDER,MegaMart Online,Shopping,74.5,debit
+2026-05-01,OAKVIEW APARTMENTS RENT,Oakview Apartments,Rent,1650.0,debit
+2026-05-01,ACME CORP PAYROLL DIRECT DEP,Acme Corp,Income,2450.0,credit
+2026-05-01,CORNER MARKET 14TH ST,Corner Market,Groceries,61.13,debit
+2026-05-01,SUNRISE CAFE,Sunrise Cafe,Dining,42.93,debit
+2026-05-01,FUELUP GAS #887,FuelUp Gas,Transport,56.31,debit
+2026-05-01,CINEMAX THEATERS,CineMax Theaters,Entertainment,16.27,debit
+2026-05-02,GREEN BASKET GROCERY,Green Basket Grocery,Groceries,40.23,debit
+2026-05-02,LUIGIS PIZZERIA,Luigi's Pizzeria,Dining,53.72,debit
+2026-05-02,QUICKRIDE TRIP,QuickRide,Transport,30.79,debit
+2026-05-04,SUNRISE CAFE,Sunrise Cafe,Dining,21.75,debit
+2026-05-05,CITY POWER & LIGHT AUTOPAY,City Power & Light,Utilities,94.09,debit
+2026-05-05,GREEN BASKET GROCERY,Green Basket Grocery,Groceries,48.41,debit
+2026-05-05,FUELUP GAS #887,FuelUp Gas,Transport,21.06,debit
+2026-05-05,BOWL-O-RAMA LANES,Bowl-O-Rama,Entertainment,39.71,debit
+2026-05-06,GREEN BASKET GROCERY,Green Basket Grocery,Groceries,113.68,debit
+2026-05-06,CITYPARK PARKING GARAGE,CityPark Parking,Transport,30.98,debit
+2026-05-07,CORNER MARKET 14TH ST,Corner Market,Groceries,128.95,debit
+2026-05-07,TACO TOWN #12,Taco Town,Dining,38.29,debit
+2026-05-07,QUICKRIDE TRIP,QuickRide,Transport,10.18,debit
+2026-05-08,STREAMFLIX SUBSCRIPTION,StreamFlix,Entertainment,15.49,debit
+2026-05-08,GREEN BASKET GROCERY,Green Basket Grocery,Groceries,49.16,debit
+2026-05-08,LUIGIS PIZZERIA,Luigi's Pizzeria,Dining,26.39,debit
+2026-05-09,QUICKRIDE TRIP,QuickRide,Transport,58.76,debit
+2026-05-10,AQUAWORKS WATER UTILITY,AquaWorks Water,Utilities,35.5,debit
+2026-05-10,NOODLE HOUSE,Noodle House,Dining,49.72,debit
+2026-05-11,LUIGIS PIZZERIA,Luigi's Pizzeria,Dining,52.65,debit
+2026-05-11,FUELUP GAS #887,FuelUp Gas,Transport,26.18,debit
+2026-05-12,CORNER MARKET 14TH ST,Corner Market,Groceries,47.21,debit
+2026-05-12,LUIGIS PIZZERIA,Luigi's Pizzeria,Dining,58.28,debit
+2026-05-12,CITYPARK PARKING GARAGE,CityPark Parking,Transport,34.49,debit
+2026-05-13,TACO TOWN #12,Taco Town,Dining,17.29,debit
+2026-05-14,CITYPARK PARKING GARAGE,CityPark Parking,Transport,59.18,debit
+2026-05-14,HOMEGOODS DEPOT,HomeGoods Depot,Shopping,44.71,debit
+2026-05-14,BOWL-O-RAMA LANES,Bowl-O-Rama,Entertainment,14.05,debit
+2026-05-15,ACME CORP PAYROLL DIRECT DEP,Acme Corp,Income,2450.0,credit
+2026-05-15,STREAMNET INTERNET SVC,StreamNet Internet,Utilities,65.0,debit
+2026-05-15,BOWL-O-RAMA LANES,Bowl-O-Rama,Entertainment,33.32,debit
+2026-05-16,TACO TOWN #12,Taco Town,Dining,34.37,debit
+2026-05-17,NOODLE HOUSE,Noodle House,Dining,43.22,debit
+2026-05-18,TACO TOWN #12,Taco Town,Dining,18.93,debit
+2026-05-20,CELLONE MOBILE BILL,CellOne Mobile,Utilities,45.0,debit
+2026-05-20,BURGER BARN #3,Burger Barn,Dining,25.43,debit
+2026-05-21,FRESHMART #0231,FreshMart,Groceries,41.95,debit
+2026-05-21,NOODLE HOUSE,Noodle House,Dining,39.79,debit
+2026-05-22,TUNELY MUSIC PREMIUM,Tunely Music,Entertainment,10.99,debit
+2026-05-22,NOODLE HOUSE,Noodle House,Dining,20.69,debit
+2026-05-22,MEGAMART ONLINE ORDER,MegaMart Online,Shopping,121.19,debit
+2026-05-24,FRESHMART #0231,FreshMart,Groceries,117.16,debit
+2026-05-27,CORNER MARKET 14TH ST,Corner Market,Groceries,56.89,debit
+2026-05-28,TACO TOWN #12,Taco Town,Dining,24.62,debit
+2026-05-28,MEGAMART ONLINE ORDER,MegaMart Online,Shopping,69.79,debit
+2026-05-29,GREEN BASKET GROCERY,Green Basket Grocery,Groceries,71.87,debit
+2026-05-29,NOODLE HOUSE,Noodle House,Dining,11.24,debit
+2026-05-30,BURGER BARN #3,Burger Barn,Dining,27.78,debit
+2026-05-30,FUELUP GAS #887,FuelUp Gas,Transport,23.53,debit
+2026-05-31,BURGER BARN #3,Burger Barn,Dining,49.59,debit
+2026-06-01,OAKVIEW APARTMENTS RENT,Oakview Apartments,Rent,1650.0,debit
+2026-06-01,ACME CORP PAYROLL DIRECT DEP,Acme Corp,Income,2450.0,credit
+2026-06-02,NOODLE HOUSE,Noodle House,Dining,38.78,debit
+2026-06-02,URBAN THREADS CLOTHING,Urban Threads,Shopping,37.64,debit
+2026-06-03,GREEN BASKET GROCERY,Green Basket Grocery,Groceries,62.65,debit
+2026-06-03,TACO TOWN #12,Taco Town,Dining,47.58,debit
+2026-06-03,FUELUP GAS #887,FuelUp Gas,Transport,21.12,debit
+2026-06-03,MEGAMART ONLINE ORDER,MegaMart Online,Shopping,117.37,debit
+2026-06-03,BOWL-O-RAMA LANES,Bowl-O-Rama,Entertainment,20.95,debit
+2026-06-04,CORNER MARKET 14TH ST,Corner Market,Groceries,29.63,debit
+2026-06-04,SUNRISE CAFE,Sunrise Cafe,Dining,18.37,debit
+2026-06-04,QUICKRIDE TRIP,QuickRide,Transport,20.4,debit
+2026-06-05,CITY POWER & LIGHT AUTOPAY,City Power & Light,Utilities,127.39,debit
+2026-06-05,TACO TOWN #12,Taco Town,Dining,16.73,debit
+2026-06-06,QUICKRIDE TRIP,QuickRide,Transport,56.3,debit
+2026-06-07,CITYPARK PARKING GARAGE,CityPark Parking,Transport,43.91,debit
+2026-06-08,STREAMFLIX SUBSCRIPTION,StreamFlix,Entertainment,15.49,debit
+2026-06-08,CITYPARK PARKING GARAGE,CityPark Parking,Transport,48.7,debit
+2026-06-09,TACO TOWN #12,Taco Town,Dining,8.66,debit
+2026-06-09,FUELUP GAS #887,FuelUp Gas,Transport,13.49,debit
+2026-06-10,AQUAWORKS WATER UTILITY,AquaWorks Water,Utilities,51.57,debit
+2026-06-10,BURGER BARN #3,Burger Barn,Dining,58.2,debit
+2026-06-10,CITYPARK PARKING GARAGE,CityPark Parking,Transport,48.28,debit
+2026-06-11,SUNRISE CAFE,Sunrise Cafe,Dining,51.2,debit
+2026-06-11,FUELUP GAS #887,FuelUp Gas,Transport,20.68,debit
+2026-06-12,TACO TOWN #12,Taco Town,Dining,17.46,debit
+2026-06-12,FUELUP GAS #887,FuelUp Gas,Transport,25.7,debit
+2026-06-13,FRESHMART #0231,FreshMart,Groceries,84.41,debit
+2026-06-13,SUNRISE CAFE,Sunrise Cafe,Dining,45.44,debit
+2026-06-14,LUIGIS PIZZERIA,Luigi's Pizzeria,Dining,12.84,debit
+2026-06-14,CITYPARK PARKING GARAGE,CityPark Parking,Transport,20.65,debit
+2026-06-15,ACME CORP PAYROLL DIRECT DEP,Acme Corp,Income,2450.0,credit
+2026-06-15,STREAMNET INTERNET SVC,StreamNet Internet,Utilities,65.0,debit
+2026-06-15,FUELUP GAS #887,FuelUp Gas,Transport,22.09,debit
+2026-06-16,FRESHMART #0231,FreshMart,Groceries,110.43,debit
+2026-06-17,CORNER MARKET 14TH ST,Corner Market,Groceries,137.31,debit
+2026-06-17,TACO TOWN #12,Taco Town,Dining,58.99,debit
+2026-06-18,QUICKRIDE TRIP,QuickRide,Transport,58.66,debit
+2026-06-19,GREEN BASKET GROCERY,Green Basket Grocery,Groceries,36.8,debit
+2026-06-19,TACO TOWN #12,Taco Town,Dining,32.41,debit
+2026-06-19,QUICKRIDE TRIP,QuickRide,Transport,58.21,debit
+2026-06-20,CELLONE MOBILE BILL,CellOne Mobile,Utilities,45.0,debit
+2026-06-20,GREEN BASKET GROCERY,Green Basket Grocery,Groceries,33.52,debit
+2026-06-20,QUICKRIDE TRIP,QuickRide,Transport,50.18,debit
+2026-06-21,CORNER MARKET 14TH ST,Corner Market,Groceries,112.91,debit
+2026-06-22,TUNELY MUSIC PREMIUM,Tunely Music,Entertainment,10.99,debit
+2026-06-24,SUNRISE CAFE,Sunrise Cafe,Dining,36.7,debit
+2026-06-24,FUELUP GAS #887,FuelUp Gas,Transport,31.43,debit
+2026-06-25,CORNER MARKET 14TH ST,Corner Market,Groceries,57.51,debit
+2026-06-25,QUICKRIDE TRIP,QuickRide,Transport,56.04,debit
+2026-06-26,CITYPARK PARKING GARAGE,CityPark Parking,Transport,19.69,debit
+2026-06-26,URBAN THREADS CLOTHING,Urban Threads,Shopping,127.46,debit
+2026-06-26,CINEMAX THEATERS,CineMax Theaters,Entertainment,38.57,debit
+2026-06-28,TACO TOWN #12,Taco Town,Dining,34.02,debit
+2026-06-28,MEGAMART ONLINE ORDER,MegaMart Online,Shopping,135.62,debit
+2026-06-29,SUNRISE CAFE,Sunrise Cafe,Dining,58.02,debit
+2026-06-30,QUICKRIDE TRIP,QuickRide,Transport,47.68,debit
+2026-07-01,OAKVIEW APARTMENTS RENT,Oakview Apartments,Rent,1650.0,debit
+2026-07-01,ACME CORP PAYROLL DIRECT DEP,Acme Corp,Income,2450.0,credit
+2026-07-01,NOODLE HOUSE,Noodle House,Dining,58.39,debit
+2026-07-02,FRESHMART #0231,FreshMart,Groceries,62.93,debit
+2026-07-02,FUELUP GAS #887,FuelUp Gas,Transport,50.31,debit
+2026-07-03,NOODLE HOUSE,Noodle House,Dining,52.98,debit
+2026-07-03,HOMEGOODS DEPOT,HomeGoods Depot,Shopping,80.06,debit
+2026-07-03,BOWL-O-RAMA LANES,Bowl-O-Rama,Entertainment,33.3,debit
+2026-07-04,LUIGIS PIZZERIA,Luigi's Pizzeria,Dining,18.59,debit
+2026-07-05,CITY POWER & LIGHT AUTOPAY,City Power & Light,Utilities,114.91,debit
+2026-07-05,CORNER MARKET 14TH ST,Corner Market,Groceries,95.02,debit
+2026-07-05,SUNRISE CAFE,Sunrise Cafe,Dining,24.16,debit
+2026-07-05,FUELUP GAS #887,FuelUp Gas,Transport,12.85,debit
+2026-07-06,SUNRISE CAFE,Sunrise Cafe,Dining,33.92,debit
+2026-07-07,CITYPARK PARKING GARAGE,CityPark Parking,Transport,15.52,debit
+2026-07-08,STREAMFLIX SUBSCRIPTION,StreamFlix,Entertainment,15.49,debit
+2026-07-08,FRESHMART #0231,FreshMart,Groceries,56.77,debit
+2026-07-08,CITYPARK PARKING GARAGE,CityPark Parking,Transport,21.89,debit
+2026-07-08,HOMEGOODS DEPOT,HomeGoods Depot,Shopping,58.81,debit
+2026-07-09,SUNRISE CAFE,Sunrise Cafe,Dining,31.22,debit
+2026-07-10,AQUAWORKS WATER UTILITY,AquaWorks Water,Utilities,42.54,debit
+2026-07-11,TACO TOWN #12,Taco Town,Dining,46.72,debit
+2026-07-12,BOWL-O-RAMA LANES,Bowl-O-Rama,Entertainment,40.96,debit
+2026-07-13,BURGER BARN #3,Burger Barn,Dining,55.34,debit
+2026-07-13,QUICKRIDE TRIP,QuickRide,Transport,29.32,debit
+2026-07-14,CITYPARK PARKING GARAGE,CityPark Parking,Transport,28.67,debit
+2026-07-14,URBAN THREADS CLOTHING,Urban Threads,Shopping,130.8,debit
+2026-07-15,ACME CORP PAYROLL DIRECT DEP,Acme Corp,Income,2450.0,credit
+2026-07-15,STREAMNET INTERNET SVC,StreamNet Internet,Utilities,65.0,debit
+2026-07-15,MEGAMART ONLINE ORDER,MegaMart Online,Shopping,50.52,debit
+2026-07-16,FRESHMART #0231,FreshMart,Groceries,110.88,debit
+2026-07-16,LUIGIS PIZZERIA,Luigi's Pizzeria,Dining,47.54,debit
+2026-07-16,MEGAMART ONLINE ORDER,MegaMart Online,Shopping,110.22,debit
+2026-07-17,FRESHMART #0231,FreshMart,Groceries,58.74,debit
+2026-07-17,SUNRISE CAFE,Sunrise Cafe,Dining,20.7,debit
+2026-07-17,CITYPARK PARKING GARAGE,CityPark Parking,Transport,49.21,debit
+2026-07-17,BOWL-O-RAMA LANES,Bowl-O-Rama,Entertainment,33.21,debit
+2026-07-18,CORNER MARKET 14TH ST,Corner Market,Groceries,41.46,debit
+2026-07-18,TACO TOWN #12,Taco Town,Dining,31.9,debit
+2026-07-18,MEGAMART ONLINE ORDER - LAPTOP,MegaMart Online,Shopping,2399.99,debit
+2026-07-19,CORNER MARKET 14TH ST,Corner Market,Groceries,43.17,debit
+2026-07-19,TACO TOWN #12,Taco Town,Dining,59.36,debit
+2026-07-19,FUELUP GAS #887,FuelUp Gas,Transport,43.9,debit
+2026-07-20,CELLONE MOBILE BILL,CellOne Mobile,Utilities,45.0,debit
+2026-07-20,NOODLE HOUSE,Noodle House,Dining,37.74,debit
+2026-07-21,CITYPARK PARKING GARAGE,CityPark Parking,Transport,52.98,debit
+2026-07-22,TUNELY MUSIC PREMIUM,Tunely Music,Entertainment,10.99,debit
+2026-07-23,SUNRISE CAFE,Sunrise Cafe,Dining,40.29,debit
+2026-07-25,URBAN THREADS CLOTHING,Urban Threads,Shopping,62.47,debit
+2026-07-26,CORNER MARKET 14TH ST,Corner Market,Groceries,125.79,debit
+2026-07-26,BURGER BARN #3,Burger Barn,Dining,55.5,debit
+2026-07-28,SUNRISE CAFE,Sunrise Cafe,Dining,52.73,debit
+2026-07-29,NOODLE HOUSE,Noodle House,Dining,8.72,debit
+2026-07-31,FRESHMART #0231,FreshMart,Groceries,96.25,debit
+2026-07-31,CITYPARK PARKING GARAGE,CityPark Parking,Transport,19.51,debit
+2026-07-31,URBAN THREADS CLOTHING,Urban Threads,Shopping,138.22,debit
+2026-08-01,OAKVIEW APARTMENTS RENT,Oakview Apartments,Rent,1650.0,debit
+2026-08-01,ACME CORP PAYROLL DIRECT DEP,Acme Corp,Income,2450.0,credit
+2026-08-01,NOODLE HOUSE,Noodle House,Dining,14.04,debit
+2026-08-01,CITYPARK PARKING GARAGE,CityPark Parking,Transport,15.05,debit
+2026-08-02,CITYPARK PARKING GARAGE,CityPark Parking,Transport,45.78,debit
+2026-08-04,GREEN BASKET GROCERY,Green Basket Grocery,Groceries,134.31,debit
+2026-08-04,CITYPARK PARKING GARAGE,CityPark Parking,Transport,27.1,debit
+2026-08-05,CITY POWER & LIGHT AUTOPAY,City Power & Light,Utilities,83.03,debit
+2026-08-05,FRESHMART #0231,FreshMart,Groceries,134.14,debit
+2026-08-05,QUICKRIDE TRIP,QuickRide,Transport,41.37,debit
+2026-08-05,BOWL-O-RAMA LANES,Bowl-O-Rama,Entertainment,21.55,debit
+2026-08-06,CORNER MARKET 14TH ST,Corner Market,Groceries,48.6,debit
+2026-08-07,FRESHMART #0231,FreshMart,Groceries,115.69,debit
+2026-08-07,QUICKRIDE TRIP,QuickRide,Transport,59.35,debit
+2026-08-08,STREAMFLIX SUBSCRIPTION,StreamFlix,Entertainment,15.49,debit
+2026-08-08,TACO TOWN #12,Taco Town,Dining,49.08,debit
+2026-08-08,FUELUP GAS #887,FuelUp Gas,Transport,8.82,debit
+2026-08-09,LUIGIS PIZZERIA,Luigi's Pizzeria,Dining,32.76,debit
+2026-08-10,AQUAWORKS WATER UTILITY,AquaWorks Water,Utilities,45.08,debit
+2026-08-10,BURGER BARN #3,Burger Barn,Dining,23.68,debit
+2026-08-10,URBAN THREADS CLOTHING,Urban Threads,Shopping,130.15,debit
+2026-08-11,CORNER MARKET 14TH ST,Corner Market,Groceries,129.62,debit
+2026-08-11,LUIGIS PIZZERIA,Luigi's Pizzeria,Dining,24.75,debit
+2026-08-11,QUICKRIDE TRIP,QuickRide,Transport,22.3,debit
+2026-08-12,URBAN THREADS CLOTHING,Urban Threads,Shopping,89.5,debit
+2026-08-13,CORNER MARKET 14TH ST,Corner Market,Groceries,38.16,debit
+2026-08-13,URBAN THREADS CLOTHING,Urban Threads,Shopping,89.5,debit
+2026-08-14,FUELUP GAS #887,FuelUp Gas,Transport,28.73,debit
+2026-08-15,ACME CORP PAYROLL DIRECT DEP,Acme Corp,Income,2450.0,credit
+2026-08-15,STREAMNET INTERNET SVC,StreamNet Internet,Utilities,65.0,debit
+2026-08-15,MEGAMART ONLINE ORDER,MegaMart Online,Shopping,32.12,debit
+2026-08-17,TACO TOWN #12,Taco Town,Dining,53.43,debit
+2026-08-18,GREEN BASKET GROCERY,Green Basket Grocery,Groceries,94.05,debit
+2026-08-18,BURGER BARN #3,Burger Barn,Dining,34.39,debit
+2026-08-18,FUELUP GAS #887,FuelUp Gas,Transport,19.66,debit
+2026-08-18,HOMEGOODS DEPOT,HomeGoods Depot,Shopping,67.78,debit
+2026-08-20,CELLONE MOBILE BILL,CellOne Mobile,Utilities,45.0,debit
+2026-08-20,TACO TOWN #12,Taco Town,Dining,9.51,debit
+2026-08-20,FUELUP GAS #887,FuelUp Gas,Transport,55.92,debit
+2026-08-21,CORNER MARKET 14TH ST,Corner Market,Groceries,71.09,debit
+2026-08-21,LUIGIS PIZZERIA,Luigi's Pizzeria,Dining,12.77,debit
+2026-08-22,TUNELY MUSIC PREMIUM,Tunely Music,Entertainment,10.99,debit
+2026-08-22,BURGER BARN #3,Burger Barn,Dining,39.0,debit
+2026-08-23,FRESHMART #0231,FreshMart,Groceries,56.29,debit
+2026-08-24,NOODLE HOUSE,Noodle House,Dining,13.77,debit
+2026-08-25,BURGER BARN #3,Burger Barn,Dining,10.85,debit
+2026-08-25,QUICKRIDE TRIP,QuickRide,Transport,47.9,debit
+2026-08-26,GREEN BASKET GROCERY,Green Basket Grocery,Groceries,110.91,debit
+2026-08-26,NOODLE HOUSE,Noodle House,Dining,35.69,debit
+2026-08-26,CITYPARK PARKING GARAGE,CityPark Parking,Transport,51.33,debit
+2026-08-26,CINEMAX THEATERS,CineMax Theaters,Entertainment,27.52,debit
+2026-08-27,TACO TOWN #12,Taco Town,Dining,37.94,debit
+2026-08-28,FRESHMART #0231,FreshMart,Groceries,136.11,debit
+2026-08-28,BURGER BARN #3,Burger Barn,Dining,31.93,debit
+2026-08-29,GREEN BASKET GROCERY,Green Basket Grocery,Groceries,92.72,debit
+2026-08-29,NOODLE HOUSE,Noodle House,Dining,53.27,debit
+2026-08-30,CORNER MARKET 14TH ST,Corner Market,Groceries,38.11,debit
+2026-08-30,TACO TOWN #12,Taco Town,Dining,26.26,debit
+2026-08-31,GREEN BASKET GROCERY,Green Basket Grocery,Groceries,47.69,debit
+2026-09-01,OAKVIEW APARTMENTS RENT,Oakview Apartments,Rent,1650.0,debit
+2026-09-01,ACME CORP PAYROLL DIRECT DEP,Acme Corp,Income,2450.0,credit
+2026-09-01,CITYPARK PARKING GARAGE,CityPark Parking,Transport,41.44,debit
+2026-09-02,NOODLE HOUSE,Noodle House,Dining,11.55,debit
+2026-09-02,FUELUP GAS #887,FuelUp Gas,Transport,49.41,debit
+2026-09-03,GREEN BASKET GROCERY,Green Basket Grocery,Groceries,76.97,debit
+2026-09-03,TACO TOWN #12,Taco Town,Dining,11.99,debit
+2026-09-04,BURGER BARN #3,Burger Barn,Dining,57.62,debit
+2026-09-04,HOMEGOODS DEPOT,HomeGoods Depot,Shopping,104.74,debit
+2026-09-05,CITY POWER & LIGHT AUTOPAY,City Power & Light,Utilities,103.78,debit
+2026-09-05,FRESHMART #0231,FreshMart,Groceries,76.81,debit
+2026-09-06,NOODLE HOUSE,Noodle House,Dining,59.53,debit
+2026-09-06,LUCKY STAR CASINO ATLANTIC,Lucky Star Casino,Entertainment,450.0,debit
+2026-09-07,TACO TOWN #12,Taco Town,Dining,43.3,debit
+2026-09-07,CITYPARK PARKING GARAGE,CityPark Parking,Transport,41.66,debit
+2026-09-07,MEGAMART ONLINE ORDER,MegaMart Online,Shopping,92.54,debit
+2026-09-08,STREAMFLIX SUBSCRIPTION,StreamFlix,Entertainment,15.49,debit
+2026-09-09,CITYPARK PARKING GARAGE,CityPark Parking,Transport,44.32,debit
+2026-09-10,AQUAWORKS WATER UTILITY,AquaWorks Water,Utilities,53.76,debit
+2026-09-10,TACO TOWN #12,Taco Town,Dining,50.29,debit
+2026-09-11,NOODLE HOUSE,Noodle House,Dining,34.44,debit
+2026-09-11,FUELUP GAS #887,FuelUp Gas,Transport,17.37,debit
+2026-09-12,SUNRISE CAFE,Sunrise Cafe,Dining,16.06,debit
+2026-09-12,QUICKRIDE TRIP,QuickRide,Transport,34.4,debit
+2026-09-14,FRESHMART #0231,FreshMart,Groceries,120.6,debit
+2026-09-15,ACME CORP PAYROLL DIRECT DEP,Acme Corp,Income,2450.0,credit
+2026-09-15,STREAMNET INTERNET SVC,StreamNet Internet,Utilities,65.0,debit
+2026-09-15,GREEN BASKET GROCERY,Green Basket Grocery,Groceries,95.22,debit
+2026-09-17,TACO TOWN #12,Taco Town,Dining,48.46,debit
+2026-09-18,CORNER MARKET 14TH ST,Corner Market,Groceries,40.92,debit
+2026-09-18,NOODLE HOUSE,Noodle House,Dining,53.45,debit
+2026-09-18,HOMEGOODS DEPOT,HomeGoods Depot,Shopping,130.65,debit
+2026-09-19,BURGER BARN #3,Burger Barn,Dining,15.66,debit
+2026-09-19,QUICKRIDE TRIP,QuickRide,Transport,50.47,debit
+2026-09-20,CELLONE MOBILE BILL,CellOne Mobile,Utilities,45.0,debit
+2026-09-20,NOODLE HOUSE,Noodle House,Dining,59.72,debit
+2026-09-20,QUICKRIDE TRIP,QuickRide,Transport,24.57,debit
+2026-09-20,HOMEGOODS DEPOT,HomeGoods Depot,Shopping,104.49,debit
+2026-09-21,GREEN BASKET GROCERY,Green Basket Grocery,Groceries,130.5,debit
+2026-09-21,SUNRISE CAFE,Sunrise Cafe,Dining,47.46,debit
+2026-09-22,TUNELY MUSIC PREMIUM,Tunely Music,Entertainment,10.99,debit
+2026-09-22,FRESHMART #0231,FreshMart,Groceries,88.11,debit
+2026-09-22,URBAN THREADS CLOTHING,Urban Threads,Shopping,50.89,debit
+2026-09-23,CORNER MARKET 14TH ST,Corner Market,Groceries,116.3,debit
+2026-09-23,LUIGIS PIZZERIA,Luigi's Pizzeria,Dining,51.51,debit
+2026-09-24,QUICKRIDE TRIP,QuickRide,Transport,39.97,debit
+2026-09-25,TACO TOWN #12,Taco Town,Dining,11.52,debit
+2026-09-26,NOODLE HOUSE,Noodle House,Dining,10.26,debit
+2026-09-26,FUELUP GAS #887,FuelUp Gas,Transport,21.19,debit
+2026-09-26,MEGAMART ONLINE ORDER,MegaMart Online,Shopping,64.82,debit
+2026-09-27,BOWL-O-RAMA LANES,Bowl-O-Rama,Entertainment,39.22,debit
+2026-09-28,CORNER MARKET 14TH ST,Corner Market,Groceries,78.43,debit
+2026-09-28,BOWL-O-RAMA LANES,Bowl-O-Rama,Entertainment,15.15,debit
+2026-09-29,FRESHMART #0231,FreshMart,Groceries,126.87,debit
+2026-09-29,TACO TOWN #12,Taco Town,Dining,34.8,debit
+2026-09-30,TACO TOWN #12,Taco Town,Dining,52.83,debit
+2026-09-30,CITYPARK PARKING GARAGE,CityPark Parking,Transport,25.26,debit
+2026-09-30,URBAN THREADS CLOTHING,Urban Threads,Shopping,76.8,debit
